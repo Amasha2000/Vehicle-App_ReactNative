@@ -13,13 +13,14 @@ const VehicleSchema = new mongoose.Schema({
   date: {
     type: Date,
     required: true,
+    default:Date.now
   },
   location: {
     type: String,
     required: true,
   },
   price: {
-    type: Double,
+    type: Number,
     required: true,
   },
   sellerName: {
