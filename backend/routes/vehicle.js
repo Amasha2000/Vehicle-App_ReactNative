@@ -60,7 +60,7 @@ router.get('/', async (req, res) => {
     if (location&&username) {
       vehicles = await Vehicle.find({ $and: [{ 'location': location }, { 'username': username }]});
     } else if (date&&username) {
-      vehicles = await Vehicle.find({ $and: [{ 'date': date }, { 'username': username }]});
+      vehicles = await Vehicle.find({ $and: [{ 'date': date }, { 'username': username }] });
     } else if (username) {
       vehicles = await Vehicle.find({ username });  
     } else {

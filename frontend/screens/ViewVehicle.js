@@ -30,8 +30,10 @@ export default function ViewVehicle({ navigation }) {
   };  
 
   const searchDate = async () => {
+    const searchDate =
+      date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
     await fetch(
-      `http://192.168.1.4:5000/api/vehicles/?date=${date}&username=${global.username}`,
+      `http://192.168.1.4:5000/api/vehicles/?date=${searchDate}&username=${global.username}`,
     )
       .then(response => response.json())
       .then(json => setVehicles(json));
