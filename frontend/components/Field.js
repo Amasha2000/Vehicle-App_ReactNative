@@ -6,13 +6,14 @@ export default function Field(props) {
     <TextInput
       {...props}
       style={{
-        borderRadius: 40,
-        color: 'green',
+        borderRadius: 10,
+        color: '#1B1464',
         paddingHorizontal: 10,
         width: '80%',
         backgroundColor: 'rgb(220,220,220)',
-        marginVertical: 12,
+        marginVertical: 10,
+        fontSize: 17,
       }}
-      placeholderTextColor="green"></TextInput>
+      placeholderTextColor="#1B1464"></TextInput>
   );
 }

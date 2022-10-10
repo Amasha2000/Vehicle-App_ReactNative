@@ -10,8 +10,8 @@ export default function Button({bgColor, textColor, btnLabel,press}) {
         borderRadius: 20,
         alignItems: 'center',
         paddingVertical: 10,
-        marginTop: 20,
-        width: 250,
+        marginTop: 30,
+        width: 270,
       }}>
       <Text style={{color: textColor, fontSize: 28, fontWeight: 'bold'}}>
         {btnLabel}

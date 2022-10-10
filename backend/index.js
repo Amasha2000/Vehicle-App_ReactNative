@@ -10,7 +10,7 @@ const path = require('path');
 
 dotenv.config();
 app.use(express.json());
-app.use('/images', express.static(path.join(__dirname, '/images')));
+app.use(express.static('./images'));
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -20,17 +20,19 @@ mongoose
   });
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'images');
-  },
+  destination: './images/',
   filename: (req, file, cb) => {
-    cb(null, req.body.name);
-  },
+    cb(null, req.body.image);
+  }
 });
 
 const upload = multer({ storage: storage });
-app.post('api/upload', upload.single('file'), (req, res) => {
-  res.status(200).json('File has been uploaded');
+// console.log(storage.destination);
+// console.log(upload);
+app.post('/api/upload', upload.single('file'), (req, res)  => {
+    console.log(req.body.image)
+    res.status(200).json('File has been uploaded');
+    console.log('Uploaded');
 });
 
 app.use('/api/auth', authRoute);

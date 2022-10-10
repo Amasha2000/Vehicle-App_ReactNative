@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const VehicleSchema = new mongoose.Schema({
-  vehicleNumber: {
+  number: {
     type: String,
     required: true,
     unique: true,
@@ -11,7 +11,7 @@ const VehicleSchema = new mongoose.Schema({
     required: true,
   },
   date: {
-    type: Date,
+    type: String,
     required: true,
     default:Date.now
   },
@@ -20,16 +20,20 @@ const VehicleSchema = new mongoose.Schema({
     required: true,
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
   },
-  sellerName: {
+  seller: {
     type: String,
     required: true,
   },
   image: {
     type: String,
     required: false
+  },
+  username: {
+    type: String,
+    required:true
   }
 });
 

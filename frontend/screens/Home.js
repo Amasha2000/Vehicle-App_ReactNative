@@ -8,37 +8,46 @@ export default function Home({navigation}) {
   return (
     <Background>
       <View style={{display: 'flex', alignItems: 'center'}}>
-        <Text
+        <View>
+          <Text
+            style={{
+              color: 'purple',
+              fontSize: 60,
+              textAlign: 'center',
+              marginTop: 0,
+              fontWeight: 'bold',
+            }}>
+            Welcome!
+          </Text>
+        </View>
+        <View
           style={{
-            color: 'white',
-            fontSize: 64,
-            textAlign: 'center',
-            marginTop: 150,
-            marginBottom: 200,
+            backgroundColor: '#74b9ff',
+            marginTop: 220,
+            height: 550,
+            width: 410,
+            borderTopLeftRadius: 80,
+            borderTopRightRadius: 80,
+            paddingTop: 10,
+            display: 'flex',
+            alignItems: 'center',
           }}>
-          Welcome
-        </Text>
-        <Button
-          bgColor="#288789"
-          textColor="white"
-          btnLabel="Sign In"
-          press={() => navigation.navigate('Login')}
-        />
-        <Button
-          bgColor="white"
-          textColor="#006A42"
-          btnLabel="Sign Up"
-          press={() => navigation.navigate('Register')}
-        />
-        <Text
-          style={{
-            color: 'white',
-            fontSize: 30,
-            textAlign: 'center',
-            marginTop: 10,
-          }}>
-          Get start
-        </Text>
+          <View style={{marginTop: 80}}>
+            <Button
+              bgColor="#8e44ad"
+              textColor="#bdc3c7"
+              btnLabel="Sign In"
+              press={() => navigation.navigate('Login')}
+            />
+            <Button
+              bgColor="#636e72"
+              textColor="#a29bfe"
+              btnLabel="Sign Up"
+              press={() => navigation.navigate('Register')}
+            />
+            <Text style={{marginTop:25,color:'purple',fontSize:16}}>Get Started...</Text>
+          </View>
+        </View>
       </View>
     </Background>
   );

@@ -20,12 +20,13 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username });
-    !user && res.status(400).json('Wrong credentials');
-
-    !(user.password === req.body.password) &&
+    if ((user) && (user.password === req.body.password)) {
+       res.status(200).json('Success');
+    } else {
       res.status(400).json('Wrong credentials');
+    }   
   } catch (error) {
-    res.status(500).json(error);
+    res.status(500).json(error);  
   }
 });
 
