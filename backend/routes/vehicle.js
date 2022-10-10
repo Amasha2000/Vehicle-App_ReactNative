@@ -57,12 +57,16 @@ router.get('/', async (req, res) => {
   const username = req.query.username;
   try {
     let vehicles;
-    if (location&&username) {
-      vehicles = await Vehicle.find({ $and: [{ 'location': location }, { 'username': username }]});
-    } else if (date&&username) {
-      vehicles = await Vehicle.find({ $and: [{ 'date': date }, { 'username': username }] });
+    if (location && username) {
+      vehicles = await Vehicle.find({
+        $and: [{ location: location }, { username: username }],
+      });
+    } else if (date && username) {
+      vehicles = await Vehicle.find({
+        $and: [{ date: date }, { username: username }],
+      });
     } else if (username) {
-      vehicles = await Vehicle.find({ username });  
+      vehicles = await Vehicle.find({ username });
     } else {
       vehicles = await Vehicle.find();
     }
